@@ -87,6 +87,11 @@
 ;; check the count, we should have 4 items purchased
 (count sales)
 
+(def bread (first sales))
+(:name bread) ; keywords can be used as functions that take a map to retrieve the value
+(bread :name) ; maps can be used as functions that take a key to retrieve the value
+
+
 (defn sales-tax [item]
   (* (:price item)
      (/ (:tax item) 100)))
